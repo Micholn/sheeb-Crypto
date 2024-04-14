@@ -1,0 +1,11 @@
+{
+    "short_name": "Sheeba-App",
+    "name": "made with React",
+    "icons": [
+
+    ],
+    "start_url": ".",
+    "display": "standalone",
+     
+
+}
