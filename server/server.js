@@ -1,5 +1,5 @@
-const name = document.getElementById("name"); //variable for name
-const password = document.getElementById("password"); //variable for password
+const express = require("express");
+const password = document.getElementById("password");
 const form = document.getElementById("form"); 
 const errorElement = document.getElementById("error");
 
@@ -35,5 +35,7 @@ form.addEventListener("submit", (e) => {
     }
  
 });
+
+const PORT = process.env.PORT || 5000;
 
 App.listen(PORT, () => console.log(`Server started on port ${PORT}`));
