@@ -35,3 +35,5 @@ form.addEventListener("submit", (e) => {
     }
  
 });
+
+App.listen(PORT, () => console.log(`Server started on port ${PORT}`));
