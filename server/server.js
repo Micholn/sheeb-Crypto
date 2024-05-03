@@ -3,6 +3,8 @@ const password = document.getElementById("password");
 const form = document.getElementById("form"); 
 const errorElement = document.getElementById("error");
 
+const app = express();
+
 // Define Routes
 
 //error middleware 
@@ -16,7 +18,6 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }
-
 
 const PORT = process.env.PORT || 5000;
 
