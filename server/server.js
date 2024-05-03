@@ -5,7 +5,14 @@ const errorElement = document.getElementById("error");
 
 const app = express();
 
+
+//Init Middleware 
+app.use(express.json());
+
 // Define Routes
+app.use();
+app.use();
+app.use();
 
 //error middleware 
 app.use(errorMiddleware);
