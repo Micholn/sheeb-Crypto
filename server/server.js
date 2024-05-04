@@ -5,6 +5,9 @@ const errorElement = document.getElementById("error");
 
 const app = express();
 
+app.use(cors());
+//Connect Database
+connectDB();
 
 //Init Middleware 
 app.use(express.json());
