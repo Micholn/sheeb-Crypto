@@ -1,7 +1,7 @@
 const express = require("express");
-const onnectDB = require("./");
-const form = document.getElementById("form"); 
-const errorElement = document.getElementById("error");
+const connectDB = require("./config/db");
+const path = require('path'); 
+const errorMiddleware = require("./middleware/error");
 
 const app = express();
 
@@ -13,9 +13,9 @@ connectDB();
 app.use(express.json());
 
 // Define Routes
-app.use();
-app.use();
-app.use();
+app.use('/api/miningserver', require('./routes/api/miningserver'));
+app.use('/api/faq', require('./routes/api/faq'));
+app.use('./routes/api/password', require('./routes/api/password'));
 
 //error middleware 
 app.use(errorMiddleware);
@@ -31,4 +31,4 @@ if (process.env.NODE_ENV === 'production') {
 
 const PORT = process.env.PORT || 5000;
 
-App.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
