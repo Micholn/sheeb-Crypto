@@ -1,5 +1,5 @@
 const express = require("express");
-const password = document.getElementById("password");
+const onnectDB = require("./");
 const form = document.getElementById("form"); 
 const errorElement = document.getElementById("error");
 
