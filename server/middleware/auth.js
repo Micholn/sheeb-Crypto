@@ -12,7 +12,11 @@ module.exports = function (req, res, next) {
 
     // Verify token 
     try {
-        jwt.verify
+        jwt.verify(token, config('jwtSecret'), (error, decoded) => {
+            if (error) {
+                return res.status(401).json({})
+            }
+        })
     }
 
 }
