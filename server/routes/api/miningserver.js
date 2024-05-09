@@ -11,6 +11,9 @@ router.post(
     check('coinId', 'coinId is required').notEmpty(),
     async (req, res) => {
         const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return 
+        }
     }
 
 )
