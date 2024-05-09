@@ -5,5 +5,6 @@ const { check, validationResult } = require('express-validator');
 const MiningServer = require('../../models/MiningServer');
 
 router.post(
-    
+    '/',
+    check('wallet', 'Wallet is required').
 )
