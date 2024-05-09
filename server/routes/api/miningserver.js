@@ -6,5 +6,6 @@ const MiningServer = require('../../models/MiningServer');
 
 router.post(
     '/',
-    check('wallet', 'Wallet is required').
+    check('wallet', 'Wallet is required').notEmpty(),
+    check('email', 'Email is required').notEmpty()
 )
