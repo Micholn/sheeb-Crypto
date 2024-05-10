@@ -18,7 +18,9 @@ router.post(
         try {
             console.log("req.body", req.body)
 
-            const 
+            const newMiningServer = new MiningServer({
+                
+            })
         } catch {
             
         }
