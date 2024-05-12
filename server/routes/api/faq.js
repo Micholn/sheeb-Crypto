@@ -42,3 +42,7 @@ router.get('/', async (req, res) => {
         res.status(500).send('Server Error');
     }
 });
+
+//@route PUT api/faqs
+//@desc Put a faq 
+//@access Private 
