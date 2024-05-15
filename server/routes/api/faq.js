@@ -81,3 +81,6 @@ router.delete('/:id', async(req, res) => {
  });
  
  router.delete 
+ // @route    DELETE api/posts/:id
+// @desc     Delete a post
+// @access   Private
