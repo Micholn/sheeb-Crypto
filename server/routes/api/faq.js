@@ -66,21 +66,25 @@ router.put('/:id', async(req, res) => {
 // @desc     Delete a post
 // @access   Private
 router.delete('/:id', async(req, res) => {
-   try {
-     const faq = await Faq.findById(req.params.id);
- 
-     if (!faq) {
-       return res.status(404).json({ msg: 'Faq not found' });
-     }
- 
-     await faq.remove();
- 
-     return res.json({
-       status: "Success"
-     });
- });
- 
- router.delete 
- // @route    DELETE api/posts/:id
-// @desc     Delete a post
-// @access   Private
+  try {
+    const faq = await Faq.findById(req.params.id);
+
+    if (!faq) {
+      return res.status(404).json({ msg: 'Faq not found' });
+    }
+
+    await faq.remove();
+
+    return res.json({
+      status: "Success"
+    });
+  } catch (err) {
+    console.error(err.message);
+
+    res.status(500).send('Server Error');
+  }
+});
+
+
+
+module.exports = router;
