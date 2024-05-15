@@ -61,6 +61,12 @@ router.put('/:id', async(req, res) => {
    }
  });
 
+ router.delete("/deleteall", async(req, res) => {
+  try {
+    await Faq.remove({})
+  }
+ })
+
  
 // @route    DELETE api/posts/:id
 // @desc     Delete a post
