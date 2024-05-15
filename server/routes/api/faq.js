@@ -31,9 +31,9 @@ router.post(
    }
 );
 
-@route GET api/faq 
-@desc Get all faqs 
-@access Private 
+//@route GET api/faq 
+//@desc Get all faqs 
+//@access Private 
 router.get('/', async (req, res) => {
     try {
 
