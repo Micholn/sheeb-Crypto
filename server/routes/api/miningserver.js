@@ -77,6 +77,6 @@ router.get('/:id', auth, checkObjectId('id'), async (req, res) => {
 
         res.json(post);
     } catch (err) {
-        
+      console.error(err.message);
     }
 } )
