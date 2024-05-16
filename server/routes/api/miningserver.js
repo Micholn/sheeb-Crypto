@@ -24,8 +24,11 @@ router.post(
             const newMiningServer = new MiningServer({
               wallet: req.body.wallet, 
               email: req.body.email, 
-              
-            })
+              coinId: req.body.coinId,
+              xcbAddress: req.body.xcbAddress, 
+              serverType: req.body.serverType  
+            });
+            
         } catch {
             
         }
