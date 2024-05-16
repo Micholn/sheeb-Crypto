@@ -4,6 +4,9 @@ const { check, validationResult } = require('express-validator');
 
 const MiningServer = require('../../models/MiningServer');
 
+//@route POST api/posts 
+//@desc  Create a post 
+//@access Private 
 router.post(
     '/',
     check('wallet', 'Wallet is required').notEmpty(),
