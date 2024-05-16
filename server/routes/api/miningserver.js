@@ -28,9 +28,12 @@ router.post(
               xcbAddress: req.body.xcbAddress, 
               serverType: req.body.serverType  
             });
-            
-        } catch {
-            
+
+            const miningServer = await newMiningServer.save();
+            res.join(miningServer);
+        } catch (err) {
+           console.log(err.message);
+           res.status(500).send('Server Error');
         }
     }
 )
