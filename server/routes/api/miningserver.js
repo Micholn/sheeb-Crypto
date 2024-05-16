@@ -44,4 +44,4 @@ router.post(
 // @access   Private
 router.get('/', async (req, res) => {
     try {
-      const miningServers =
+      const miningServers
