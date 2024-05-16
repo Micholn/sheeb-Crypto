@@ -60,6 +60,17 @@ router.delete('/deleteall', async (req, res) => {
     res.json(miningServers);
   } catch (err) {
     console.error(err.message);
-    res.status(500)
+    res.status(500).send('server Error')
   }
+});
+
+//@route DELETE api/posts/:id
+//@desc Get post by ID 
+//@access Private 
+router.get('/:id', auth, checkObjectId('id'), async (req, res) => {
+    try {
+        const post = await post.findById(req.params.id);
+
+        if (!post) {}
+    }
 } )
