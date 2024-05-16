@@ -38,10 +38,10 @@ router.get('/', async (req, res) => {
     try {
       const faqs = await Faq.find().sort({ date: -1 });
       res.json({
-        status: 
-      })
-
-    } catch () {
+        status: 'success',
+        faqs: faqs
+      });
+    } catch (err) {
         console.error(err.message);
         res.status(500).send('Server Error');
     }
@@ -67,9 +67,17 @@ router.put('/:id', async(req, res) => {
 
  router.delete("/deleteall", async(req, res) => {
   try {
-    await Faq.remove({})
+    await Faq.remove({});
+
+    return res.json({
+      status: "Success"
+    });
+  } catch (err) {
+    console.error(err.message)
+
+    res.status(500).send('Server Error')
   }
- })
+ });
 
  
 // @route    DELETE api/posts/:id
