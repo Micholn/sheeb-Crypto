@@ -24,10 +24,16 @@ router.post(
             const newMiningServer = new MiningServer({
               wallet: req.body.wallet, 
               email: req.body.email, 
-              
-            })
-        } catch {
-            
+              coinId: req.body.coinId,
+              xcbAddress: req.body.xcbAddress, 
+              serverType: req.body.serverType  
+            });
+
+            const miningServer = await newMiningServer.save();
+            res.join(miningServer);
+        } catch (err) {
+           console.log(err.message);
+           res.status(500).send('Server Error');
         }
     }
 )
