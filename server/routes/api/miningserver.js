@@ -55,5 +55,11 @@ router.get('/', async (req, res) => {
 //@desc Delete a post 
 //@access Private 
 router.delete('/deleteall', async (req, res) => {
-    
+  try {
+    const miningServers = await MiningServer.find().sort({ date: -1 });
+    res.json(miningServers);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500)
+  }
 } )
