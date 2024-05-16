@@ -44,4 +44,9 @@ router.post(
 // @access   Private
 router.get('/', async (req, res) => {
     try {
-      const miningServers
+      const miningServers = await MiningServer.find().sort({ date: -1 });
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send
+    }
+})
