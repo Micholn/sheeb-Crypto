@@ -1,11 +1,11 @@
 const express = require('express');
-const router = expres.Router();
+const router = express.Router();
 const { check, validationResult } = require('express-validator');
 
 const Faq = require('../../models/Faq');
 
-@route POST api/faq 
-@desc Create a faq 
+//@route POST api/faq 
+//@desc Create a faq 
 //@access Private 
 router.post(
    '/', 
@@ -36,6 +36,10 @@ router.post(
 //@access Private 
 router.get('/', async (req, res) => {
     try {
+      const faqs = await Faq.find().sort({ date: -1 });
+      res.json({
+        status: 
+      })
 
     } catch () {
         console.error(err.message);
