@@ -71,6 +71,8 @@ router.get('/:id', auth, checkObjectId('id'), async (req, res) => {
     try {
         const post = await post.findById(req.params.id);
 
-        if (!post) {}
+        if (!post) { 
+            return res.status(404).json({})
+        }
     }
 } )
