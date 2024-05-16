@@ -22,7 +22,9 @@ router.post(
             console.log("req.body", req.body)
 
             const newMiningServer = new MiningServer({
-                
+              wallet: req.body.wallet, 
+              email: req.body.email, 
+              
             })
         } catch {
             
