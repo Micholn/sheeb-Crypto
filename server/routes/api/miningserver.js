@@ -36,4 +36,12 @@ router.post(
            res.status(500).send('Server Error');
         }
     }
-)
+);
+
+
+// @route    GET api/posts
+// @desc     Get all posts
+// @access   Private
+router.get('/', async (req, res) => {
+    try {
+      const miningServers =
