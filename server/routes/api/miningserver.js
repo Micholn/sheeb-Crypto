@@ -114,7 +114,8 @@ router.get('/:id', auth, checkObjectId('id'), async (req, res) => {
 //   }
 // });
 
-
+//@route PUT api/posts/like/:id
+//@desc Like a post 
 
 
 
