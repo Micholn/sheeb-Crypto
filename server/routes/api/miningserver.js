@@ -91,9 +91,6 @@ router.get('/:id', auth, checkObjectId('id'), async (req, res) => {
 //@route DELETE api/posts/:id
 //@desc Delete a post 
 //@access Private 
-// @route    DELETE api/posts/:id
-// @desc     Delete a post
-// @access   Private
 // router.delete('/:id', [auth, checkObjectId('id')], async (req, res) => {
 //   try {
 //     const post = await Post.findById(req.params.id);
@@ -116,4 +113,9 @@ router.get('/:id', auth, checkObjectId('id'), async (req, res) => {
 //     res.status(500).send('Server Error');
 //   }
 // });
+
+
+
+
+
 module.exports = router
