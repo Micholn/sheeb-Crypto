@@ -56,10 +56,12 @@ router.get('/', async (req, res) => {
 //@access Private 
 router.delete('/deleteall', async (req, res) => {
   try {
-    const miningServers = await MiningServer.find().sort({ date: -1 });
-    res.json(miningServers);
+    await MiningServer.remove({})
+    
+    res.json({msg: 'MiningServers removed'});
   } catch (err) {
     console.error(err.message);
+    
     res.status(500).send('server Error')
   }
 });
