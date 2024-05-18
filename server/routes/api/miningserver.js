@@ -61,12 +61,12 @@ router.delete('/deleteall', async (req, res) => {
     res.json({msg: 'MiningServers removed'});
   } catch (err) {
     console.error(err.message);
-    
+
     res.status(500).send('server Error')
   }
 });
 
-//@route DELETE api/posts/:id
+//@route GET api/posts/:id
 //@desc Get post by ID 
 //@access Private 
 router.get('/:id', auth, checkObjectId('id'), async (req, res) => {
@@ -113,4 +113,6 @@ router.get('/:id', auth, checkObjectId('id'), async (req, res) => {
 //     res.status(500).send('Server Error');
 //   }
 // });
+
+
 module.exports = router
