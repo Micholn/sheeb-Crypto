@@ -126,9 +126,19 @@ router.put('/like/:id', auth, checkObjectId('id'), async (req, res) => {
       return res.status(400).json({ msg: 'Post already liked'});
     }
 
-    post.likes.unshift({ })
-  }
-})
-  
+    post.likes.unshift({ user: req.user.id });
+    
+    await post.save();
 
+    return res.json(post.likes);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+  
+//@route PUT api/posts/unlike/:id
+//@desc Unlike a post 
+//@access Private 
+router.put('')
 module.exports = router
