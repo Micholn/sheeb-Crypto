@@ -147,4 +147,10 @@ router.put('/unlike/:id', auth, checkObjectId('id')async (req, res) => {
 //     if (!post.likes.some((like) => like.user.toString() === req.user.id)) {
 //       return res.status(400).json({ msg: 'Post has not yet been liked' });
 //     }
+
+// remove the like
+//     post.likes = post.likes.filter(
+//       ({ user }) => user.toString() !== req.user.id
+//     );
+
 module.exports = router
