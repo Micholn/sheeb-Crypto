@@ -143,7 +143,8 @@ router.put('/like/:id', auth, checkObjectId('id'), async (req, res) => {
 router.put('/unlike/:id', auth, checkObjectId('id')async (req, res) => {
    try {
       const post = await Post.findById(req.params.id);)
-      // Check if the post has not yet been liked
+      /// Check if the post has not yet been liked
 //     if (!post.likes.some((like) => like.user.toString() === req.user.id)) {
-//      
+//       return res.status(400).json({ msg: 'Post has not yet been liked' });
+//     }
 module.exports = router
