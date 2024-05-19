@@ -140,5 +140,7 @@ router.put('/like/:id', auth, checkObjectId('id'), async (req, res) => {
 //@route PUT api/posts/unlike/:id
 //@desc Unlike a post 
 //@access Private 
-router.put('/unlike/:id', auth, checkObjectId('id'))
+router.put('/unlike/:id', auth, checkObjectId('id')async (req, res) => {
+   try {
+      const post = await Post.findById(req.params.id);)
 module.exports = router
