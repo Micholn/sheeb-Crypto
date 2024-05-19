@@ -153,4 +153,12 @@ router.put('/unlike/:id', auth, checkObjectId('id')async (req, res) => {
 //       ({ user }) => user.toString() !== req.user.id
 //     );
 
+await post.save();
+
+//     return res.json(post.likes);
+//   } catch (err) {
+//     console.error(err.message);
+//     res.status(500).send('Server Error');
+//   }
+// });
 module.exports = router
