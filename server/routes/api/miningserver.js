@@ -207,6 +207,15 @@ router.put('/unlike/:id', auth, checkObjectId('id'), async (req, res) => {
 router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
+
+    //Pull out comment 
+    const comment = post.comments.find( 
+      (comment) => comment.id === req.params.comment_id 
+    );
+    // Make sure comment exists 
+    if (comment.user.toString() !== req.user.id) {
+      return res.status(401)
+    }
   }
 })
 
