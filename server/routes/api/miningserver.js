@@ -222,8 +222,12 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
     }
 
     post.comments = post.comments.filter(
-      ({ id }) => id !== params.
-    )
+      ({ id }) => id !== req.params.comment_id
+    );
+
+    await post.save();
+
+    
   } 
 
 })
