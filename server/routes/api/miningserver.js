@@ -183,7 +183,7 @@ router.put('/unlike/:id', auth, checkObjectId('id'), async (req, res) => {
        const post = await Post.findById(req.params.id);
 
        const newComment = {
-//         text: req.body.text,
+         text: req.body.text,
          name: user.name,
          avatar: user.avatar,
          user: req.user.id
