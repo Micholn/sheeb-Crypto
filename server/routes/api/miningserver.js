@@ -232,4 +232,8 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
 
 })
 
+// @route    PUT api/posts/unlike/:id
+// @desc     Unlike a post
+// @access   Private
+// router
 module.exports = router;
