@@ -232,4 +232,15 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
 
 })
 
+// @route    PUT api/posts/unlike/:id
+// @desc     Unlike a post
+// @access   Private
+// router// router.put('/unlike/:id', auth, checkObjectId('id'), async (req, res) => {
+//   try {
+//     const post = await Post.findById(req.params.id);
+
+//     // Check if the post has not yet been liked
+//     if (!post.likes.some((like) => like.user.toString() === req.user.id)) {
+//       return res.status(400).json({ msg: 'Post has not yet been liked' });
+//     
 module.exports = router;
