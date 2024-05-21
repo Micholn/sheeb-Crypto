@@ -257,4 +257,22 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
 //     res.status(500).send('Server Error');
 //   }
 // });  
+
+// @route    POST api/posts/comment/:id
+// @desc     Comment on a post
+// @access   Private
+// router.post(
+//   '/comment/:id',
+//   auth,
+//   checkObjectId('id'),
+//   check('text', 'Text is required').notEmpty(),
+//   async (req, res) => {
+//     const errors = validationResult(req);
+//     if (!errors.isEmpty()) {
+//       return res.status(400).json({ errors: errors.array() });
+//     }
+
+//     try {
+//       const user = await User.findById(req.user.id).select('-password');
+//       const post =
 module.exports = router;
