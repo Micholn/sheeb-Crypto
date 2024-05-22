@@ -280,8 +280,11 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
         text: req.body.text, 
         name: user.name, 
         avatar: user.avatar 
-        
-       } 
+        user: req.user.id 
+       };
+  
+       post.comments.unshift9
+);       
 
 
 module.exports = router;
