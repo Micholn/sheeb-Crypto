@@ -303,8 +303,9 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res ) =>{
     const post = await Post.findById 
   } catch (err) {
     console.log
+    return res.status(500).send('Server Error');
   }
-} )
+});
 
 
 module.exports = router;
