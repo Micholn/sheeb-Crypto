@@ -299,7 +299,11 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
 //@desc Delete comment 
 //@access Private 
 router.delete('/comment/:id/:comment_id', auth, async (req, res ) =>{
-  
+  try {
+
+  } catch (err) {
+    console.log
+  }
 } )
 
 
