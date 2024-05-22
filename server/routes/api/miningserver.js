@@ -300,7 +300,10 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
 //@access Private 
 router.delete('/comment/:id/:comment_id', auth, async (req, res ) =>{
   try {
-    const post = await Post.findById 
+    const post = await Post.findById
+    
+    //Pull out comment 
+    const comment 
   } catch (err) {
     console.log
     return res.status(500).send('Server Error');
