@@ -283,7 +283,11 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
         user: req.user.id 
        };
   
-       post.comments.unshift9
+       post.comments.unshift(newComment);
+
+       await post.save();
+
+       res.json(post.comments);
 );       
 
 
