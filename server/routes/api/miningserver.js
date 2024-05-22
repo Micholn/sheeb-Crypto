@@ -300,7 +300,7 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
 //@access Private 
 router.delete('/comment/:id/:comment_id', auth, async (req, res ) =>{
   try {
-
+    const post = await Post.findById 
   } catch (err) {
     console.log
   }
