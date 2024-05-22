@@ -279,7 +279,8 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
        const newComment = {
         text: req.body.text, 
         name: user.name, 
-        avatar: 
+        avatar: user.avatar 
+        
        } 
 
 
