@@ -309,7 +309,7 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res ) =>{
 
     //make sure comment exists 
     if(!comment) {
-      
+      return res.status(404).json({ })
     }
   } catch (err) {
     console.log
