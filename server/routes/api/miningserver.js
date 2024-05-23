@@ -314,7 +314,7 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res ) =>{
 
     //check user
     if (comment.user.toString() !== req.user.id) {
-      return 
+      return res.status
     }
   } catch (err) {
     console.log
