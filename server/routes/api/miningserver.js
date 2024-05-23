@@ -306,6 +306,11 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res ) =>{
     const comment = post.comments.find(
       (comment) => comment.id === req.params.comment_id 
     ); 
+
+    //make sure comment exists 
+    if(!comment) {
+      
+    }
   } catch (err) {
     console.log
     return res.status(500).send('Server Error');
