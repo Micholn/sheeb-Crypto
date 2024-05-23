@@ -316,6 +316,11 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res ) =>{
     if (comment.user.toString() !== req.user.id) {
       return res.status
     }
+
+    post.comments = post.comments.filter( 
+      ({ id }) => id !== req.params.comment_id 
+    ); 
+    
   } catch (err) {
     console.log
     return res.status(500).send('Server Error');
