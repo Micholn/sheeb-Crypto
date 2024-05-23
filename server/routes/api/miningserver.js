@@ -320,7 +320,10 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res ) =>{
     post.comments = post.comments.filter( 
       ({ id }) => id !== req.params.comment_id 
     ); 
-    
+
+    await post.save();
+
+    return 
   } catch (err) {
     console.log
     return res.status(500).send('Server Error');
