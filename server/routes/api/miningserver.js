@@ -229,7 +229,8 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
 
     return res.json(post.comments)    
   } catch (err) {
-    console.error
+    console.error(err.message);
+    return res.status
   }
 
 })
