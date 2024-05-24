@@ -227,7 +227,7 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
 
     await post.save();
 
-    
+    return res.json(post.comments)    
   } 
 
 })
