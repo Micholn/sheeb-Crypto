@@ -48,6 +48,7 @@ router.post(
 router.put('/:id', async(req, res) => {
     try {
 
+      await Password.findOneAndUpdate({ _id: req.params.id }, {value: req.body.value}, { })
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Server Error');
