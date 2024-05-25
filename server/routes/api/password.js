@@ -35,10 +35,13 @@ router.post(
             password: passwords[0]
         });
       }
-      
+
     } catch {
         console.error(err.message);
         res.status(500).send('Server Error')
     }
  });
 
+//@route PUT api/faqs
+//@desc Put a faq
+//@access Private 
