@@ -28,7 +28,14 @@ router.post(
 
  router.get('/', async (req, res) => {
     try {
-      const passwords = await Password.find().sort({ })
+      const passwords = await Password.find().sort({ date: -1 });
+      if(passwords.length){
+        res.json({
+            status: 'success',
+            password: passwords[0]
+        });
+      }
+      
     } catch {
         console.error(err.message);
         res.status(500).send('Server Error')
