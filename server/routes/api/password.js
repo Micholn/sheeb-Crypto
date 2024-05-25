@@ -10,10 +10,15 @@ router.post(
     async (req, res) => {
       const errors = validationResult(req);  
       if(!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array})
+        return res.status(400).json({ errors: errors.array() })
       }
       try {
+        const password = new Password({
+            value: "Rock"
+        });
 
+        const ppassword = await password.save();
+        res.json(ppassword);
       } catch (err) {
         console.err(err.message);
         res.status(500).send('Server Error');
@@ -23,11 +28,10 @@ router.post(
 
  router.get('/', async (req, res) => {
     try {
-
+      const passwords = await Password.find().sort({ })
     } catch {
         console.error(err.message);
         res.status(500).send('Server Error')
     }
  });
 
- 
