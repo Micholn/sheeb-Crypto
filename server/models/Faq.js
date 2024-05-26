@@ -9,7 +9,12 @@ const Faq = require('../../models/Faq');
 //@access Private 
 router.post(
   '/',
-  check('question', 'question is required')
+  check('question', 'question is required').notEmpty();
+  check('answer', 'answer is required').notEmpty(),
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+     
 )
 
 
