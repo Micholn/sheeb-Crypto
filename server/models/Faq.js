@@ -14,9 +14,19 @@ router.post(
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-     
+      return 
+    }
+    try {
+      const newFaq = new Faq({
+        question: req.body.question,
+        answer: req.body.answer,
+      });
+
+      const faq = await newFaq.save();
+      res.json(faq);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server Error');
+    }
+  }
 );
-
-
-
-
