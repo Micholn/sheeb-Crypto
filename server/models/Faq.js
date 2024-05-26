@@ -9,12 +9,12 @@ const Faq = require('../../models/Faq');
 //@access Private 
 router.post(
   '/',
-  check('question', 'question is required').notEmpty();
+  check('question', 'question is required').notEmpty(),
   check('answer', 'answer is required').notEmpty(),
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return 
+      return res.status(400).json({ errors: errors.array() });
     }
     try {
       const newFaq = new Faq({
@@ -30,3 +30,21 @@ router.post(
     }
   }
 );
+
+
+// @route    GET api/faq
+// @desc     Get all faqs
+// @access   Private
+router.get('/', async (req, res) => {
+  try {
+    const faqs = await Faq.find().sort({ date: -1 });
+    res.json({
+        status: 'success',
+        faqs: faqs
+    });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
