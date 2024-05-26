@@ -48,3 +48,17 @@ router.get('/', async (req, res) => {
   }
 });
 
+
+//@route     PUT api/faqs
+//@desc      Put a faq
+//@access    Private
+router.put('/:id', async(req, res) => {
+  try {
+   
+    
+  });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
