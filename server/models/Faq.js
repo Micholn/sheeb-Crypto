@@ -66,3 +66,18 @@ router.put('/:id', async(req, res) => {
     res.status(500).send('Server Error');
   }
 });
+
+
+router.delete('/deleteall', async(req, res) => {
+  try {
+    await Faq.remove({});
+
+    return res.json({
+      status: "Success"
+    });
+  } catch (err) {
+    console.error(err.message);
+
+    res.status(500).send('Server Error');
+  }
+});
