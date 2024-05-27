@@ -52,18 +52,3 @@ router.get('/', async (req, res) => {
 //@route     PUT api/faqs
 //@desc      Put a faq
 //@access    Private
-router.put('/:id', async(req, res) => {
-  try {
-   
-    await Faq.findOneAndUpdate({_id: req.params.id}, {question: req.body.question, answer: req.body.answer}, {upsert: true}, function(err, doc) {
-      if (err) return res.send(500, {error: err});
-      return res.json({
-        status: "Success"
-      });
-  });
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send('Server Error');
-  }
-});
-
