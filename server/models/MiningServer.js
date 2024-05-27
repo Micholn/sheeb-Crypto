@@ -6,7 +6,18 @@ const MiningServerSchema = new Schema({
     type: String,
     required: true
   },
-  
+  wallet: {
+    type: String
+  },
+  xcbAddress:{
+    type: String
+  },
+  coinId: {
+    type: String
+  },
+  serverType:{
+    type: String
+  },
 });
 
 module.exports = mongoose.model('miningserver', MiningServerSchema);
