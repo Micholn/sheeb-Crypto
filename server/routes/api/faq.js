@@ -35,16 +35,16 @@ router.post(
 //@desc Get all faqs 
 //@access Private 
 router.get('/', async (req, res) => {
-    try {
-      const faqs = await Faq.find().sort({ date: -1 });
-      res.json({
+  try {
+    const faqs = await Faq.find().sort({ date: -1 });
+    res.json({
         status: 'success',
         faqs: faqs
-      });
-    } catch (err) {
-        console.error(err.message);
-        res.status(500).send('Server Error');
-    }
+    });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
 });
 
 //@route PUT api/faqs
