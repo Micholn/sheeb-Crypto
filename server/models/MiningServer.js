@@ -1,12 +1,9 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+const MiningServerSchema = new Schema({
+  email: {
+    type: String,
+    required: true
+  },
+  
+});
 
-// https://vitejs.dev/config/
-export default defineConfig({
-   plugins: [react()],
-  server: {
-    hmr: {
-      overlay: false,
-    }
-  }
-})
+module.exports = mongoose.model('miningserver', MiningServerSchema);
